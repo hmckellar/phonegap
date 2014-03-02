@@ -1,19 +1,94 @@
-<html>
-  <head>
-    <title>Sample "Hello, World" Application</title>
-  </head>
-  <body bgcolor=white>
+<!doctype html>
+<!--[if lt IE 7]> <html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>    <html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
 
-    <table border="0" cellpadding="10">
-      <tr>
-        <td>
-          <img src="images/springsource.png">
-        </td>
-        <td>
-          <h1>Sample "Hello, World" Application</h1>
-        </td>
-      </tr>
-    </table>
+	<title></title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  </body>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+    <link href="css/font-awesome-ie7.min.css" rel="stylesheet" />
+    <link href="css/datepicker.css" rel="stylesheet" />
+    <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet" />
+
+    <!--IE can not load too big stylesheet file, and for fix it I split switch.css to two files-->
+    <!--[if IE]>
+        <link href="css/switchPart1.css?v=231" rel="stylesheet" />
+        <link href="css/switchPart2.css?v=231" rel="stylesheet" />
+    <![endif]-->
+
+    <!--[if !IE]><!-->
+        <link rel="stylesheet" type="text/css" href="css/switch.css?v=231" />
+	    <!--<link rel="stylesheet/less" href="less/switch.less" />
+        <script src="js/libs/less-1.3.3.min.js"></script>-->
+    <!--<![endif]-->
+
+    <style id="whitelabelcss" type="text/css"></style>
+
+    <!-- Enable this only for Phonegap builds!s
+    <script src="phonegap.js"></script>
+    -->
+</head>
+<body>
+    <div id="header-navbar-bg" class="header-navbar-bg" style="text-align:left;min-height:80px;">
+        <div class="row">
+            <div class="col-md-6" style="padding-left:10px;">
+                <div id="navbarlogo" style="display:inline-block;height:70px;overflow:hidden;">
+                    <img src="https://switchhub.blob.core.windows.net/static/images/website/new_switch_logo.png" onclick="onLogoClick()" alt="" style="margin-top:5px;cursor:pointer;" />
+                </div>
+            </div>
+            <div class="col-md-6" style="padding-top:10px;">
+                <style>.open > .dropdown-menu {z-index: 100000;}</style>
+                <div style="font-size:150%;font-weight:bold;text-align:right;clear:right;padding-right:10px;">
+                    <span id="brand-name" style="cursor:pointer;" onclick="javascript:navigate('hub');"></span>
+                    <span id="brand-site-sep" style="color:#777;display:none;">/</span>
+                    <span id="active-installation" style="cursor:pointer;" onclick="javascript:navigate('sites');"></span>
+                </div>
+                <div style="height:15px;"><!-- --></div>
+                <div id="header-user-menu" class="header-user-menu">
+                    <div id="options-dropdown-div" class="whitelabel-nav-item-icon-options"></div>
+                    <div id="sites-dropdown-div" class="whitelabel-nav-item-icon-sites"></div>
+                    <div id="data-wizards-priv" title="Data Wizards" style="display:inline-block;"></div>
+                    <div id="full-screen-btn" title="Toggle full screen" class="whitelabel-nav-item-icon-fullscreen"></div>
+                    <div id="refresh-btn" onclick="refreshApp()" title="Refresh application" class="whitelabel-nav-item-icon-refresh"></div>
+                    <div id="logoff-btn" onclick="javascript:navigate('logout')" title="Logout" class="whitelabel-nav-item-icon-off"></div>
+                    <div id="home-btn" onclick="javascript:navigate('hub')" title="Home" class="whitelabel-nav-item-icon-home"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="container-id" class="hubcontainer">
+        <div id="content-div"></div>
+        <div id="wizard-content-div" style="display:none;"></div>
+        <div style="clear:both;height:70px;"><!-- --></div>
+    </div>
+
+    <!-- this div is used for the centered spinner -->
+    <div id="spinner-div"></div>
+
+    <!-- Hub wide notifications -->
+    <div id="popup-notifications"></div>
+
+    <div id="unresized-logo" style="width:1px;height:1px;overflow:hidden;"><img src="" class="header-logo" /></div>
+
+    <div id="colorpicker-div"></div>
+
+    <!-- our main.js -->
+    <script data-main="js/main" src="js/libs/require.js"></script>
+
+    <script type="text/javascript">
+        var _gaq = [['_setAccount', 'UA-18215512-1'], ['_trackPageview']];
+        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g, s)
+        }(document, 'script'));
+    </script>
+
+
+</body>
 </html>
